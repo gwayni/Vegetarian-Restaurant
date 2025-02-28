@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earthly Eats - Farm-to-Table</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function filterMenu(category) {
+            let items = document.querySelectorAll('.menu-item');
+            
+            if (category === 'all') {
+                items.forEach(item => item.style.display = 'block');
+            } else {
+                items.forEach(item => {
+                    item.style.display = item.classList.contains(category) ? 'block' : 'none';
+                });
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#FAF3E0] text-gray-900">
+
+    <!-- Hero Section -->
+<section class="relative w-full h-[400px] bg-cover bg-center group" style="background-image: url('header.webp');">
+    <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-center px-6 transition-opacity duration-500 group-hover:opacity-0">
+        <img src="earthlyeatslogo.png" alt="Earthly Eats Logo" class="h-50 w-auto"> 
+    </div>
+    <img src="header5.webp" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500" alt="Hero Hover Image">
+</section>
+
+    <!-- Featured Dishes -->
+    <section class="py-10 px-6 bg-white shadow-lg rounded-lg max-w-5xl mx-auto mt-10">
+        <h2 class="text-3xl font-bold text-center text-[#2F855A]">🌱 Featured Dishes</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+            <div class="bg-white p-4 shadow-lg rounded-lg text-center hover:scale-105 transition-transform">
+                <img src="featured1.jpg" class="w-full h-40 object-cover rounded-lg" alt="Salad">
+                <p class="mt-2 font-bold text-lg">Spinach Wrap</p>
+                <p class="text-[#2F855A] font-semibold">$5.45</p>
+            </div>
+            <div class="bg-white p-4 shadow-lg rounded-lg text-center hover:scale-105 transition-transform">
+                <img src="featured2.jpeg" class="w-full h-40 object-cover rounded-lg" alt="Wrap">
+                <p class="mt-2 font-bold text-lg">Vegetable Pie</p>
+                <p class="text-[#2F855A] font-semibold">$9.99</p>
+            </div>
+            <div class="bg-white p-4 shadow-lg rounded-lg text-center hover:scale-105 transition-transform">
+                <img src="featured3.jpg" class="w-full h-40 object-cover rounded-lg" alt="Drink">
+                <p class="mt-2 font-bold text-lg">Fresh Mint Mojito</p>
+                <p class="text-[#2F855A] font-semibold">$3.49</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Philosophy -->
+    <section class="py-10 px-6 text-center bg-white shadow-lg rounded-lg max-w-5xl mx-auto mt-10">
+        <h2 class="text-3xl font-bold text-[#2F855A]">🌾 Our Farm-to-Table Philosophy</h2>
+        <p class="text-gray-600 mt-4 max-w-3xl mx-auto">
+            We source our ingredients directly from local organic farms, ensuring freshness and quality. 
+            Our commitment to sustainability means we use eco-friendly packaging and minimize food waste.
+        </p>
+        <div class="flex flex-wrap justify-center mt-6 space-x-4">
+            <img src="freshfarm.jpg" class="w-40 h-40 object-cover rounded-lg shadow-lg" alt="Farm Fresh">
+            <img src="localfarmers.png" class="w-40 h-40 object-cover rounded-lg shadow-lg" alt="Local Farmers">
+            <img src="ecopackaging.jpg" class="w-40 h-40 object-cover rounded-lg shadow-lg" alt="Eco Packaging">
+        </div>
+    </section>
+
+    <!-- Our Menu -->
+    <section class="py-10 text-center">
+        <h2 class="text-3xl font-bold text-[#2F855A] mb-6">🍽️ Our Menu</h2>
+        <div class="mb-6">
+            <button onclick="filterMenu('all')" class="px-4 py-2 bg-[#2F855A] text-white rounded-lg mx-2 hover:bg-green-700 transition">All</button>
+            <button onclick="filterMenu('salad')" class="px-4 py-2 bg-[#FACC15] text-white rounded-lg mx-2 hover:bg-yellow-600 transition">Salads</button>
+            <button onclick="filterMenu('wrap')" class="px-4 py-2 bg-[#F59E0B] text-white rounded-lg mx-2 hover:bg-orange-600 transition">Wraps</button>
+            <button onclick="filterMenu('drink')" class="px-4 py-2 bg-[#EF4444] text-white rounded-lg mx-2 hover:bg-red-700 transition">Drinks</button>
+        </div>
+    
+        <div class="menu-container max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+            <!-- Salads -->
+            <div class="menu-item salad bg-white p-4 shadow-lg rounded-lg">
+                <img src="tortillasalad.jpg" class="w-full h-40 object-cover rounded-lg" alt="Salad">
+                <p class="mt-2 font-bold">Tortilla Salad</p>
+                <p class="text-sm text-gray-600">Tortilla bowls, black beans, corn, cherry tomatoes, lettuce, avocado, bell peppers, lime dressing.</p>
+                <p class="mt-2 font-bold text-green-700">$3.99</p>
+            </div>
+            <div class="menu-item salad bg-white p-4 shadow-lg rounded-lg">
+                <img src="greeksalad.jpg" class="w-full h-40 object-cover rounded-lg" alt="Salad">
+                <p class="mt-2 font-bold">Greek Salad</p>
+                <p class="text-sm text-gray-600">Cucumbers, cherry tomatoes, red onion, black olives, chickpeas, vegan feta, olive oil, lemon juice.</p>
+                <p class="mt-2 font-bold text-green-700">$4.49</p>
+            </div>
+            <div class="menu-item salad bg-white p-4 shadow-lg rounded-lg">
+                <img src="caesarsalad.jpg" class="w-full h-40 object-cover rounded-lg" alt="Salad">
+                <p class="mt-2 font-bold">Caesar Salad</p>
+                <p class="text-sm text-gray-600">Romaine lettuce, croutons, vegan parmesan, cashew-based Caesar dressing.</p>
+                <p class="mt-2 font-bold text-green-700">$3.79</p>
+            </div>
+    
+            <!-- Wraps -->
+            <div class="menu-item wrap bg-white p-4 shadow-lg rounded-lg">
+                <img src="Fresh-Veggie-Hummus-Wrap.png" class="w-full h-40 object-cover rounded-lg" alt="Wrap">
+                <p class="mt-2 font-bold">Hummus Veggie Wrap</p>
+                <p class="text-sm text-gray-600">Tortilla, hummus, cucumbers, carrots, bell peppers, lettuce, sprouts.</p>
+                <p class="mt-2 font-bold text-green-700">$4.99</p>
+            </div>
+            <div class="menu-item wrap bg-white p-4 shadow-lg rounded-lg">
+                <img src="wrap2.jpg" class="w-full h-40 object-cover rounded-lg" alt="Wrap">
+                <p class="mt-2 font-bold">Potato Black Bean Tacos</p>
+                <p class="text-sm text-gray-600">Corn tortillas, roasted sweet potatoes, black beans, cabbage, jalapeños, avocado, lime.</p>
+                <p class="mt-2 font-bold text-green-700">$3.49</p>
+            </div>
+            <div class="menu-item wrap bg-white p-4 shadow-lg rounded-lg">
+                <img src="wrap3.jpg" class="w-full h-40 object-cover rounded-lg" alt="Wrap">
+                <p class="mt-2 font-bold">Rice Paper Rolls</p>
+                <p class="text-sm text-gray-600">Rice paper, lettuce, carrots, cucumbers, tofu, mint, peanut sauce.</p>
+                <p class="mt-2 font-bold text-green-700">$3.99</p>
+            </div>
+    
+            <!-- Drinks -->
+            <div class="menu-item drink bg-white p-4 shadow-lg rounded-lg">
+                <img src="Triple-Berry-Smoothie.jpg" class="w-full h-40 object-cover rounded-lg" alt="Drink">
+                <p class="mt-2 font-bold">Triple Berry Smoothie</p>
+                <p class="text-sm text-gray-600">Strawberries, blueberries, raspberries, banana, almond milk.</p>
+                <p class="mt-2 font-bold text-green-700">$2.99</p>
+            </div>
+            <div class="menu-item drink bg-white p-4 shadow-lg rounded-lg">
+                <img src="mangolassi.webp" class="w-full h-40 object-cover rounded-lg" alt="Drink">
+                <p class="mt-2 font-bold">Mango Lassi</p>
+                <p class="text-sm text-gray-600">Mango, coconut yogurt, almond milk, cardamom, maple syrup.</p>
+                <p class="mt-2 font-bold text-green-700">$2.79</p>
+            </div>
+            <div class="menu-item drink bg-white p-4 shadow-lg rounded-lg">
+                <img src="matcha.jpg" class="w-full h-40 object-cover rounded-lg" alt="Drink">
+                <p class="mt-2 font-bold">Iced Matcha Latte</p>
+                <p class="text-sm text-gray-600">Matcha powder, almond milk, maple syrup, ice.</p>
+                <p class="mt-2 font-bold text-green-700">$3.29</p>
+            </div>
+        </div>
+    </section>
+
+    <!--Farm to Plate-->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold text-[#2F855A] mb-6">🌿 Farm to Plate Journey</h2>
+            <p class="text-gray-700 text-lg max-w-3xl mx-auto">
+                We source fresh, organic ingredients from local farms to bring you the most flavorful and nutritious meals. Follow the journey from the farm to your plate!
+            </p>
+        </div>
+    
+        <!-- Steps Section -->
+        <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto px-6">
+            <div class="bg-green-50 p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                <h3 class="text-xl font-semibold text-[#2F855A] mb-2">1. Fresh Harvest</h3>
+                <p class="text-gray-600">Our farms grow organic fruits and vegetables, picked at peak freshness.</p>
+            </div>
+    
+            <div class="bg-green-50 p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                <h3 class="text-xl font-semibold text-[#2F855A] mb-2">2. Sustainable Sourcing</h3>
+                <p class="text-gray-600">Ingredients are ethically sourced and delivered fresh to our kitchen.</p>
+            </div>
+    
+            <div class="bg-green-50 p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                <h3 class="text-xl font-semibold text-[#2F855A] mb-2">3. Handcrafted Dishes</h3>
+                <p class="text-gray-600">Our chefs prepare every meal with care, preserving nutrients and taste.</p>
+            </div>
+    
+            <div class="bg-green-50 p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                <h3 class="text-xl font-semibold text-[#2F855A] mb-2">4. Served Fresh</h3>
+                <p class="text-gray-600">Enjoy farm-fresh meals, delivered straight to your table or doorstep.</p>
+            </div>
+        </div>
+    
+        <div class="flex justify-center mt-8">
+            <a href="https://www.therestauranthq.com/trends/what-is-farm-to-table/" target="_blank" rel="noopener noreferrer">
+                <button class="px-6 py-3 bg-[#2F855A] text-white rounded-lg hover:bg-green-700 transition">
+                    Learn More
+                </button>
+            </a>
+        </div>        
+    </section>
+    
+    <!-- Footer -->
+    <footer class="mt-10 bg-[#2F855A] text-white p-6 text-center">
+        <p class="text-lg font-bold">🌱 100% Sustainable | Locally Sourced | Eco-Friendly Packaging</p>
+        <p class="mt-2 text-sm">Every meal you enjoy helps support small organic farms & reduces our carbon footprint.</p>
+        <p class="text-sm">&copy; 2025 Earthly Eats. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
